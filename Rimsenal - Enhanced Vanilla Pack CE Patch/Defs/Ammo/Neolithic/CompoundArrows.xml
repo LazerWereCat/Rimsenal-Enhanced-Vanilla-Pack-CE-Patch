@@ -1,0 +1,191 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <ThingCategoryDef>
+      <defName>AmmoCompoundArrows</defName>
+      <label>compound arrows</label>
+      <parent>AmmoNeolithic</parent>
+      <iconPath>UI/Icons/ThingCategories/CaliberArrow</iconPath>
+    </ThingCategoryDef>
+	
+	<!-- ==================== AmmoSet ========================== -->
+
+	<CombatExtended.AmmoSetDef>
+		<defName>AmmoSet_CompoundArrow</defName>
+		<label>compound arrows</label>
+		<ammoTypes>
+			<Ammo_CompoundArrow_BulletTip>Projectile_CompoundArrow_BulletTip</Ammo_CompoundArrow_BulletTip>
+			<Ammo_CompoundArrow_Broadhead>Projectile_CompoundArrow_Broadhead</Ammo_CompoundArrow_Broadhead>
+		</ammoTypes>
+	</CombatExtended.AmmoSetDef>
+	
+	<!-- ==================== Ammo ========================== -->
+
+  <ThingDef Class="CombatExtended.AmmoDef" Name="AmmoCompoundArrowBase" ParentName="NeolithicAmmoBase" Abstract="True">
+    <description>Modern arrows with a carbon shaft designed to be fired from a compound bow.</description>
+    <statBases>
+      <Mass>0.8</Mass>
+      <Bulk>0.8</Bulk>
+      <Flammability>0.2</Flammability>
+    </statBases>
+    <thingCategories>
+      <li>AmmoArrows</li>
+    </thingCategories>
+    <stackLimit>200</stackLimit>
+    <tradeTags>
+      <li>CE_AutoEnableTrade</li>
+      <li>CE_AutoEnableCrafting_FueledSmithy</li>
+      <li>CE_AutoEnableCrafting_ElectricSmithy</li>
+    </tradeTags>
+  </ThingDef>
+
+  <ThingDef Class="CombatExtended.AmmoDef" ParentName="AmmoCompoundArrowBase">
+    <defName>Ammo_CompoundArrow_BulletTip</defName>
+    <label>compound arrow (bullet tip)</label>
+    <graphicData>
+      <texPath>Things/Ammo/Neolithic/Arrow/Compound</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>1.15</MarketValue>
+    </statBases>
+		<ammoClass>SteelArrow</ammoClass>
+    <tradeTags>
+      <li>CE_AutoEnableCrafting_CraftingSpot</li>
+    </tradeTags>
+  </ThingDef>
+
+  <ThingDef Class="CombatExtended.AmmoDef" ParentName="AmmoCompoundArrowBase">
+    <defName>Ammo_CompoundArrow_Broadhead</defName>
+    <label>compound arrow (broadhead)</label>
+    <graphicData>
+      <texPath>Things/Ammo/Neolithic/Arrow/Compound</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>1.20</MarketValue>
+    </statBases>
+		<ammoClass>SteelArrow</ammoClass>
+  </ThingDef>
+
+	
+	<!-- ================== Projectiles ================== -->
+
+	<ThingDef Class="CombatExtended.AmmoDef" Name="BaseCompoundArrowProjectile" ParentName="BaseBullet" Abstract="true">
+		<graphicData>
+			<texPath>Things/Projectile/Arrow_Small</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<projectile Class="CombatExtended.ProjectilePropertiesCE">
+			<damageDef>Arrow</damageDef>
+			<speed>95</speed>
+		</projectile>
+	</ThingDef>
+
+	<!-- The amount of arrows usable over the ammo lifetime for each resource cost is equal to
+		[r / (1 - x)];
+			x = preExplosionSpawnChance,
+			r = resource cost. -->
+	
+
+	<ThingDef Class="CombatExtended.AmmoDef" ParentName="BaseCompoundArrowProjectile">
+		<defName>Projectile_CompoundArrow_BulletTip</defName>
+		<label>compound arrow (bullet tip)</label>
+		<graphicData>
+			<texPath>Things/Projectile/Arrows/Arrow_Compound</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<projectile Class="CombatExtended.ProjectilePropertiesCE">
+			<damageAmountBase>13</damageAmountBase>
+			<armorPenetrationBase>0.55</armorPenetrationBase>
+			<preExplosionSpawnChance>0.666</preExplosionSpawnChance>
+			<preExplosionSpawnThingDef>Ammo_CompoundArrow_BulletTip</preExplosionSpawnThingDef>
+		</projectile>
+	</ThingDef>
+
+	<ThingDef Class="CombatExtended.AmmoDef" ParentName="BaseCompoundArrowProjectile">
+		<defName>Projectile_CompoundArrow_Broadhead</defName>
+		<label>compound arrow (broadhead)</label>
+		<graphicData>
+			<texPath>Things/Projectile/Arrows/Arrow_Compound</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<projectile Class="CombatExtended.ProjectilePropertiesCE">
+			<damageAmountBase>18</damageAmountBase>
+			<armorPenetrationBase>0.33</armorPenetrationBase>
+			<preExplosionSpawnChance>0.5</preExplosionSpawnChance>
+			<preExplosionSpawnThingDef>Ammo_CompoundArrow_Broadhead</preExplosionSpawnThingDef>
+		</projectile>
+	</ThingDef>
+  
+	<!-- ==================== Recipes ========================== -->
+
+  <RecipeDef ParentName="AmmoRecipeNeolithicBase">
+    <defName>MakeAmmo_CompoundArrow_BulletTip</defName>
+    <label>make bullet tip compound arrows x10</label>
+    <description>Craft 10 bullet tip compound arrows.</description>
+    <jobString>Making bullet tip compound arrows.</jobString>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Steel</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+	  <li>
+        <filter>
+          <thingDefs>
+            <li>Chemfuel</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+		<li>Steel</li>
+        <li>Chemfuel</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <Ammo_CompoundArrow_BulletTip>10</Ammo_CompoundArrow_BulletTip>
+    </products>
+  </RecipeDef>
+
+  <RecipeDef ParentName="AmmoRecipeNeolithicBase">
+    <defName>MakeAmmo_CompoundArrow_Broadhead</defName>
+    <label>make broadhead compound arrows x10</label>
+    <description>Craft 10 broadhead compound arrows.</description>
+    <jobString>Making broadhead compound arrows.</jobString>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Steel</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+	  <li>
+        <filter>
+          <thingDefs>
+            <li>Chemfuel</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+		<li>Steel</li>
+        <li>Chemfuel</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <Ammo_CompoundArrow_Broadhead>10</Ammo_CompoundArrow_Broadhead>
+    </products>
+  </RecipeDef>
+	
+</Defs>
