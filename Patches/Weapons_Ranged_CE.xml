@@ -63,8 +63,7 @@
 							<label>nock</label>
 							<capacities>
 							<li>Poke</li>
-							</capacities>
-							<power>8</power>
+							</capacities><power>8</power>
 							<cooldownTime>1.6</cooldownTime>
 							<armorPenetration>0.075</armorPenetration>
 							<linkedBodyPartsGroup>Point</linkedBodyPartsGroup>
@@ -103,6 +102,7 @@
 					<defaultProjectile>Axe_Thrown</defaultProjectile>
 					<warmupTime>1.5</warmupTime>
 					<range>11</range>
+					<soundCast>Interact_BeatFire</soundCast>
 				</Properties>
 			</li>
 			<li Class="PatchOperationReplace">
@@ -171,6 +171,7 @@
 					<defaultProjectile>Club_Thrown</defaultProjectile>
 					<warmupTime>1.5</warmupTime>
 					<range>10</range>
+					<soundCast>Interact_BeatFire</soundCast>
 				</Properties>
 			</li>
 			<li Class="PatchOperationReplace">
@@ -213,7 +214,13 @@
 			<li Class="PatchOperationRemove">
 				<xpath>Defs/ThingDef[defName="Gun_Blowgun"]</xpath>
 			</li>
+
+			<!-- ========== No Smoke Grenade =========== -->
 			
+			<li Class="PatchOperationRemove">
+				<xpath>Defs/ThingDef[defName="Weapon_GrenadeSmoke"]</xpath>
+			</li>
+
 		</operations>
 	</Operation>	  
 </Patch>

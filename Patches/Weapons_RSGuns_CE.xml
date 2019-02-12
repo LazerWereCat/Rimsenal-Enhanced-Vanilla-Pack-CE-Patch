@@ -36,6 +36,7 @@
 					<ticksBetweenBurstShots>5</ticksBetweenBurstShots>
 					<range>55</range>
 					<soundCast>RS_ShotBattleRifle</soundCast>
+					<soundCastTail>GunTail_Heavy</soundCastTail>
 					<muzzleFlashScale>9</muzzleFlashScale>
 				</Properties>
 				<AmmoUser>
@@ -115,11 +116,12 @@
 					<verbClass>CombatExtended.Verb_ShootCE</verbClass>
 					<hasStandardCommand>true</hasStandardCommand>
 					<defaultProjectile>Bullet_556x45mmNATO_FMJ</defaultProjectile>
-					<warmupTime>0.6</warmupTime>
+					<warmupTime>1.1</warmupTime>
 					<burstShotCount>6</burstShotCount>
 					<ticksBetweenBurstShots>4</ticksBetweenBurstShots>
-					<range>40</range>
+					<range>32</range>
 					<soundCast>RS_ShotCarbine</soundCast>
+					<soundCastTail>GunTail_Light</soundCastTail>
 					<muzzleFlashScale>9</muzzleFlashScale>
 				</Properties>
 				<AmmoUser>
@@ -199,6 +201,7 @@
 					<warmupTime>0.6</warmupTime>
 					<range>12</range>
 					<soundCast>RS_ShotRevolver</soundCast>
+					<soundCastTail>GunTail_Heavy</soundCastTail>
 					<muzzleFlashScale>9</muzzleFlashScale>
 				</Properties>
 				<AmmoUser>
@@ -278,6 +281,7 @@
 					<warmupTime>3</warmupTime>
 					<range>86</range>
 					<soundCast>RS_ShotAMRifle</soundCast>
+					<soundCastTail>GunTail_Heavy</soundCastTail>
 					<muzzleFlashScale>15</muzzleFlashScale>
 				</Properties>
 				<AmmoUser>
@@ -353,6 +357,7 @@
 					<ticksBetweenBurstShots>8</ticksBetweenBurstShots>
 					<range>55</range>
 					<soundCast>Shot_Minigun</soundCast>
+					<soundCastTail>GunTail_Medium</soundCastTail>
 					<muzzleFlashScale>9</muzzleFlashScale>
 				</Properties>
 				<AmmoUser>
@@ -438,6 +443,7 @@
 					<warmupTime>1.1</warmupTime>
 					<range>55</range>
 					<soundCast>Shot_Revolver</soundCast>
+					<soundCastTail>GunTail_Medium</soundCastTail>
 					<muzzleFlashScale>9</muzzleFlashScale>
 				</Properties>
 				<AmmoUser>
@@ -520,6 +526,7 @@
 					<ticksBetweenBurstShots>6</ticksBetweenBurstShots>
 					<range>44</range>
 					<soundCast>RS_ShotMilitiaRifle</soundCast>
+					<soundCastTail>GunTail_Medium</soundCastTail>
 					<muzzleFlashScale>9</muzzleFlashScale>
 				</Properties>
 				<AmmoUser>

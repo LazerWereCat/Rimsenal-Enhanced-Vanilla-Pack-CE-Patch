@@ -1,7 +1,8 @@
-﻿<Patch>
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<Patch>
 
 	<Operation Class="PatchOperationSequence">
-		<success>Always</success>
 		<operations>
 			<li Class="CombatExtended.PatchOperationFindMod">
 				<modName>Rimsenal - Enhanced Vanilla Pack</modName>
@@ -20,23 +21,29 @@
 					<label>tactical armor vest</label>
 				</value>
 			</li>
-			<li Class="PatchOperationAdd">
-				<xpath>Defs/ThingDef[defName="Apparel_TacArmor"]/statBases</xpath>
-				<value>
-					<Bulk>8</Bulk>
-					<WornBulk>3.0</WornBulk>
-				</value>
-			</li>
 			<li Class="PatchOperationReplace">
 				<xpath>Defs/ThingDef[defName="Apparel_TacArmor"]/statBases/Mass</xpath>
 				<value>
 					<Mass>8</Mass>
 				</value>
 			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[defName="Apparel_TacArmor"]/statBases</xpath>
+				<value>
+					<Bulk>6</Bulk>
+					<WornBulk>5.0</WornBulk>
+				</value>
+			</li>
 			<li Class="PatchOperationReplace">
 				<xpath>Defs/ThingDef[defName="Apparel_TacArmor"]/statBases/ArmorRating_Sharp</xpath>
 				<value>
-					<ArmorRating_Sharp>0.8</ArmorRating_Sharp>
+					<ArmorRating_Sharp>0.75</ArmorRating_Sharp>
+				</value>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="Apparel_TacArmor"]/statBases/ArmorRating_Heat</xpath>
+				<value>
+					<ArmorRating_Heat>0.34</ArmorRating_Heat>
 				</value>
 			</li>
 			<li Class="PatchOperationAdd">
@@ -44,6 +51,7 @@
 				<value>
 					<equippedStatOffsets>
 						<CarryBulk>10</CarryBulk>
+						<ReloadSpeed>0.10</ReloadSpeed>
 					</equippedStatOffsets>
 				</value>
 			</li>
@@ -59,6 +67,13 @@
 					<Plasteel>50</Plasteel>
 				</value>
 			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[defName="Apparel_TacArmor"]/apparel/bodyPartGroups</xpath>
+				<value>
+					<li>Shoulders</li>
+					<li>Neck</li>
+				</value>
+			</li>
 			
 			<!-- ========== Tactical Helmet =========== -->
 			
@@ -66,19 +81,24 @@
 				<xpath>Defs/ThingDef[defName="Apparel_TacHelmet"]/statBases</xpath>
 				<value>
 					<Bulk>3</Bulk>
-					<WornBulk>1</WornBulk>
-				</value>
-			</li>
-			<li Class="PatchOperationReplace">
-				<xpath>Defs/ThingDef[defName="Apparel_TacHelmet"]/statBases/Mass</xpath>
-				<value>
-					<Mass>1.8</Mass>
 				</value>
 			</li>
 			<li Class="PatchOperationReplace">
 				<xpath>Defs/ThingDef[defName="Apparel_TacHelmet"]/statBases/ArmorRating_Sharp</xpath>
 				<value>
-					<ArmorRating_Sharp>0.725</ArmorRating_Sharp>
+					<ArmorRating_Sharp>0.68</ArmorRating_Sharp>
+				</value>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="Apparel_TacHelmet"]/statBases/ArmorRating_Blunt</xpath>
+				<value>
+					<ArmorRating_Blunt>0.25</ArmorRating_Blunt>
+				</value>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="Apparel_TacHelmet"]/statBases/ArmorRating_Heat</xpath>
+				<value>
+					<ArmorRating_Heat>0.50</ArmorRating_Heat>
 				</value>
 			</li>
 			<li Class="PatchOperationAdd">
@@ -100,13 +120,13 @@
 				<xpath>Defs/ThingDef[defName="Apparel_Exoframe"]/statBases</xpath>
 				<value>
 					<Bulk>25</Bulk>
-					<WornBulk>5</WornBulk>
+					<WornBulk>7</WornBulk>
 				</value>
 			</li>
 			<li Class="PatchOperationReplace">
 				<xpath>Defs/ThingDef[defName="Apparel_Exoframe"]/statBases/Mass</xpath>
 				<value>
-					<Mass>15</Mass>
+					<Mass>10</Mass>
 				</value>
 			</li>
 			<li Class="PatchOperationReplace">
@@ -130,7 +150,7 @@
 			<li Class="PatchOperationAdd">
 				<xpath>Defs/ThingDef[defName="Apparel_Exoframe"]/equippedStatOffsets</xpath>
 				<value>
-					<CarryWeight>60</CarryWeight>
+					<CarryWeight>40</CarryWeight>
 				</value>
 			</li>
 			
@@ -152,13 +172,13 @@
 			<li Class="PatchOperationReplace">
 				<xpath>Defs/ThingDef[defName="Apparel_ProtectiveGear"]/statBases/Mass</xpath>
 				<value>
-					<Mass>20</Mass>
+					<Mass>18</Mass>
 				</value>
 			</li>
 			<li Class="PatchOperationReplace">
 				<xpath>Defs/ThingDef[defName="Apparel_ProtectiveGear"]/statBases/ArmorRating_Sharp</xpath>
 				<value>
-					<ArmorRating_Sharp>0.7</ArmorRating_Sharp>
+					<ArmorRating_Sharp>0.6</ArmorRating_Sharp>
 				</value>
 			</li>
 			<li Class="PatchOperationReplace">
@@ -169,6 +189,12 @@
 			</li>
 			<li Class="PatchOperationRemove">
 				<xpath>Defs/ThingDef[defName="Apparel_ProtectiveGear"]/equippedStatOffsets/MoveSpeed</xpath>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[defName="Apparel_ProtectiveGear"]/equippedStatOffsets</xpath>
+				<value>
+					<ToxicSensitivity>-0.30</ToxicSensitivity>
+				</value>
 			</li>
 			<li Class="PatchOperationAdd">
 				<xpath>Defs/ThingDef[defName="Apparel_ProtectiveGear"]/apparel/bodyPartGroups</xpath>
@@ -213,6 +239,12 @@
 			</li>
 			<li Class="PatchOperationRemove">
 				<xpath>Defs/ThingDef[defName="Apparel_ProtectiveHelmet"]/equippedStatOffsets/MoveSpeed</xpath>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[defName="Apparel_ProtectiveHelmet"]/equippedStatOffsets</xpath>
+				<value>
+					<ToxicSensitivity>-0.20</ToxicSensitivity>
+				</value>
 			</li>
 			
 		</operations>
