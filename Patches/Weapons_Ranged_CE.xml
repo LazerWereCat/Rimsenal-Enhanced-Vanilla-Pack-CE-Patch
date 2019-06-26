@@ -215,12 +215,6 @@
 				<xpath>Defs/ThingDef[defName="Gun_Blowgun"]</xpath>
 			</li>
 
-			<!-- ========== No Smoke Grenade =========== -->
-			
-			<li Class="PatchOperationRemove">
-				<xpath>Defs/ThingDef[defName="Weapon_GrenadeSmoke"]</xpath>
-			</li>
-
 		</operations>
 	</Operation>	  
 </Patch>

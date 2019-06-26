@@ -24,7 +24,7 @@
   <ThingDef Class="CombatExtended.AmmoDef" Name="AmmoCompoundArrowBase" ParentName="NeolithicAmmoBase" Abstract="True">
     <description>Modern arrows with a carbon shaft designed to be fired from a compound bow.</description>
     <statBases>
-      <Mass>0.8</Mass>
+      <Mass>0.08</Mass>
       <Bulk>0.8</Bulk>
       <Flammability>0.2</Flammability>
     </statBases>

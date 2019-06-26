@@ -262,8 +262,8 @@
 				<defName>Gun_RSAMRifle</defName>
 				<statBases>
 					<WorkToMake>35000</WorkToMake>
-					<SightsEfficiency>2.5</SightsEfficiency>
-					<ShotSpread>0.05</ShotSpread>
+					<SightsEfficiency>3.0</SightsEfficiency>
+					<ShotSpread>0.03</ShotSpread>
 					<SwayFactor>1.84</SwayFactor>
 					<Bulk>13</Bulk>
 					<Mass>13.5</Mass>
@@ -274,7 +274,6 @@
 					<ComponentIndustrial>5</ComponentIndustrial>
 				</costList>
 				<Properties>
-					<recoilAmount>2.42</recoilAmount>					
 					<verbClass>CombatExtended.Verb_ShootCE</verbClass>
 					<hasStandardCommand>true</hasStandardCommand>
 					<defaultProjectile>Bullet_50BMG_FMJ</defaultProjectile>
